@@ -62,6 +62,13 @@ class SongsController < ApplicationController
     end
   end
 
+  def random_song
+    random_song = Song.where(user_id: current_user.id).or(Song.where(public: "yes")).map {|song| song.id}.sample
+    # song = Song.find(random_song)
+    # params[:id] = random_song
+    redirect_to song_path(random_song)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_song
