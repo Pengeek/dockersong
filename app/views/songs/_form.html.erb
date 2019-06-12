@@ -26,9 +26,14 @@
     <%= form.text_field :time %>
   </div>
 
+<!--  <div class="field">-->
+    <%#= form.label :user_id %>
+    <%#= form.number_field :user_id %>
+<!--  </div>-->
+
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.label :public %>
+    <%= form.select :public, options_for_select(Song.publics.keys) %>
   </div>
 
   <div class="actions">

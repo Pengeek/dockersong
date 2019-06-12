@@ -21,8 +21,10 @@
         <td><%= song.time %></td>
         <td><%= song.user_id %></td>
         <td><%= link_to 'Show', song %></td>
+        <% if song.user == current_user %>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -364,3 +364,804 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.0ms | Allocations: 7856)
 
 
+Started GET "/" for 127.0.0.1 at 2019-06-12 21:09:46 +0200
+  [1m[35m (65.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 25ms (ActiveRecord: 0.0ms | Allocations: 1084)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-06-12 21:09:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 11.9ms | Allocations: 640)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 85.3ms | Allocations: 2954)
+Completed 200 OK in 2544ms (Views: 2452.4ms | ActiveRecord: 25.2ms | Allocations: 1355298)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-06-12 21:10:04 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"UQn2tnggeEDfOhBFAhac0RviTFbCA0xC4J+eOW8t8z09DAuYEaoGtLQrRWa70nxxfflomyZH4SZo2qlapMjCqg==", "user"=>{"email"=>"macciej.net@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'macciej.net@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 352ms (ActiveRecord: 2.9ms | Allocations: 3717)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"UQn2tnggeEDfOhBFAhac0RviTFbCA0xC4J+eOW8t8z09DAuYEaoGtLQrRWa70nxxfflomyZH4SZo2qlapMjCqg==", "user"=>{"email"=>"macciej.net@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1056)
+Completed 200 OK in 235ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 7758)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-06-12 21:10:08 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"lAWyZkEB9dfhyQ/STgTLI71wg6oxEhAJB0HyPim0NZz4AE9IKIuLI4rYWvH3wCuD22unZ9VWvW2PBMVd4lEECw==", "user"=>{"email"=>"macciej.net@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'macciej.net@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 347ms (ActiveRecord: 1.3ms | Allocations: 5236)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-12 21:10:08 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 214)
+Completed 200 OK in 74ms (Views: 27.8ms | ActiveRecord: 4.1ms | Allocations: 9673)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:10:17 +0200
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (5.4ms)[0m  [1m[34mSELECT `songs`.* FROM `songs`[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 50.6ms | Allocations: 6011)
+Completed 200 OK in 112ms (Views: 67.0ms | ActiveRecord: 15.8ms | Allocations: 14049)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:16:15 +0200
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0.rc1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0.rc1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+web-console (4.0.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+railties (6.0.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+activesupport (6.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/static.rb:126:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:57:in `block in call'
+activesupport (6.0.0.rc1) lib/active_support/notifications.rb:182:in `instrument'
+actionpack (6.0.0.rc1) lib/action_dispatch/middleware/stack.rb:56:in `call'
+railties (6.0.0.rc1) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('309776275100891130', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddPublicToSongs (20190612191428)
+  [1m[35m (293.6ms)[0m  [1m[35mALTER TABLE `songs` ADD `public` int[0m
+  [1m[35m (5.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (10.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190612191428')[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('309776275100891130')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:16:59 +0200
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 43.3ms | Allocations: 5987)
+Completed 200 OK in 2210ms (Views: 2149.0ms | ActiveRecord: 8.1ms | Allocations: 1360241)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:17:05 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (2.2ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 944)
+Completed 200 OK in 36ms (Views: 26.9ms | ActiveRecord: 2.7ms | Allocations: 8587)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:17:19 +0200
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 111.3ms | Allocations: 3769)
+  Rendered songs/new.html.erb within layouts/application (Duration: 119.0ms | Allocations: 4129)
+Completed 200 OK in 146ms (Views: 142.8ms | ActiveRecord: 0.0ms | Allocations: 10890)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:18:39 +0200
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 29.2ms | Allocations: 3568)
+  Rendered songs/new.html.erb within layouts/application (Duration: 33.8ms | Allocations: 4038)
+Completed 200 OK in 2233ms (Views: 2199.8ms | ActiveRecord: 2.3ms | Allocations: 1356335)
+
+
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:22:32 +0200
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 31.6ms | Allocations: 4129)
+  Rendered songs/new.html.erb within layouts/application (Duration: 34.4ms | Allocations: 4599)
+Completed 200 OK in 2098ms (Views: 2063.4ms | ActiveRecord: 2.6ms | Allocations: 1356890)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:22:39 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"/E/ueeTeqZyF+OBhGXfgh3X6ucs2UankwfMdZQBdKg58Ja2TnrYfUziisUg1f/ls9hHSFlAVPA5GqUOUi0rnDQ==", "song"=>{"title"=>"", "author"=>"", "time"=>"", "public"=>"0"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :public[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:28:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mSong Create (10.2ms)[0m  [1m[32mINSERT INTO `songs` (`title`, `author`, `user_id`, `created_at`, `updated_at`) VALUES ('', '', 1, '2019-06-12 19:22:39.725638', '2019-06-12 19:22:39.725638')[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/songs/2
+Completed 302 Found in 129ms (ActiveRecord: 30.2ms | Allocations: 13455)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2019-06-12 21:22:39 +0200
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE `songs`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:68:in `set_song'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 333)
+Completed 200 OK in 26ms (Views: 19.7ms | ActiveRecord: 0.6ms | Allocations: 7859)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:22:43 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 22.9ms | Allocations: 1386)
+Completed 200 OK in 104ms (Views: 69.5ms | ActiveRecord: 13.0ms | Allocations: 9176)
+
+
+Started DELETE "/songs/2" for 127.0.0.1 at 2019-06-12 21:22:47 +0200
+Processing by SongsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wNVfhgb6rAbw2yRmUBqqYZJmoIs0IFbWVh6RXAi/f11AvxxsfJIayU2BdU98ErOKEY3LVlJkwzzRRM+tg6iyXg==", "id"=>"2"}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE `songs`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:68:in `set_song'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:58:in `destroy'
+  [1m[36mSong Destroy (11.5ms)[0m  [1m[31mDELETE FROM `songs` WHERE `songs`.`id` = 2[0m
+  ↳ app/controllers/songs_controller.rb:58:in `destroy'
+  [1m[35m (57.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:58:in `destroy'
+Redirected to http://localhost:3000/songs
+Completed 302 Found in 80ms (ActiveRecord: 69.4ms | Allocations: 3054)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:22:47 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 938)
+Completed 200 OK in 29ms (Views: 19.2ms | ActiveRecord: 1.6ms | Allocations: 8577)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:27:09 +0200
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 42.1ms | Allocations: 5985)
+Completed 200 OK in 2291ms (Views: 2243.8ms | ActiveRecord: 5.1ms | Allocations: 1360311)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:27:15 +0200
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 21.5ms | Allocations: 3892)
+  Rendered songs/new.html.erb within layouts/application (Duration: 28.8ms | Allocations: 4251)
+Completed 200 OK in 91ms (Views: 82.0ms | ActiveRecord: 0.0ms | Allocations: 10990)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:27:17 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"cK3cQnetwkaDUj3rDQ8FX1Jg2seSNBI7XgYh7QLoVC9Jm5tjP0KBH1Nd9pkNel4HlPJcFANO+3OQO/53UVnnng==", "song"=>{"title"=>"", "author"=>"", "time"=>"", "public"=>"0"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :public[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:28:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[35m (4.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 4.7ms | Allocations: 1713)
+  Rendered songs/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1799)
+Completed 200 OK in 62ms (Views: 19.5ms | ActiveRecord: 8.0ms | Allocations: 16405)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:27:38 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"g2bQn+DpO564PKCbqUiVfjoLssqFjEFzzobiGuYROK4DDJN1moGNUQVm8bKFQIyVueDZF+PI1JlJ3LzrbQb1rQ==", "song"=>{"title"=>"", "author"=>"", "time"=>"", "public"=>"0"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :public[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 7.1ms | Allocations: 1696)
+  Rendered songs/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1782)
+Completed 200 OK in 70ms (Views: 22.8ms | ActiveRecord: 2.4ms | Allocations: 14063)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:27:45 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"qnFcpC8MepaURfUgQfhIIY2hncjPYXmyaZwwT91MiYIqGx9OVWTMWSkfpAlt8FHKDkr2Fakl7Fjuxm6+VltEgQ==", "song"=>{"title"=>"as", "author"=>"sa", "time"=>"as", "public"=>"0"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :public[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:28:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 4.7ms | Allocations: 1299)
+  Rendered songs/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1385)
+Completed 200 OK in 104ms (Views: 24.9ms | ActiveRecord: 7.4ms | Allocations: 12777)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:27:49 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"rMwUuicOonlghJitbDXIi7HPEoyHYmzcbbYv2dBJROkspldQXWYUtt3eyYRAPdFgMiR5UeEm+Tbq7HEoW16J6g==", "song"=>{"title"=>"as", "author"=>"sa", "time"=>"as", "public"=>"1"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :public[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:28:in `create'
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 25.4ms | Allocations: 1299)
+  Rendered songs/new.html.erb within layouts/application (Duration: 32.2ms | Allocations: 1384)
+Completed 200 OK in 172ms (Views: 56.0ms | ActiveRecord: 15.5ms | Allocations: 12773)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:28:41 +0200
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 45.5ms | Allocations: 5985)
+Completed 200 OK in 2139ms (Views: 2083.0ms | ActiveRecord: 5.0ms | Allocations: 1360266)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:28:46 +0200
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 11.1ms | Allocations: 3892)
+  Rendered songs/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 4252)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 11014)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:28:59 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"5hwqoDqDYzz/YRMUjCfI94HdGtb/dPfNSED7AGnSL/bfKm2BcmwgZS9u2GaMUpOvR0+cBW4OHoWGfSSaOmOcRw==", "song"=>{"title"=>"sds", "author"=>"sds", "time"=>"1", "public"=>"0"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 1286)
+
+
+  
+ArgumentError ('0' is not a valid public):
+  
+app/controllers/songs_controller.rb:27:in `create'
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:30:51 +0200
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 27.3ms | Allocations: 5547)
+  Rendered songs/new.html.erb within layouts/application (Duration: 30.2ms | Allocations: 5993)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 2.2ms | Allocations: 14326)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    33: 
+    34:   <div class="field">
+    35:     <%= form.label :public %>
+    36:     <%= form.select :public, options_for_select([["yes", "yes"]["no", "no"]]) %>
+    37:   </div>
+    38: 
+    39:   <div class="actions">
+  
+app/views/songs/_form.html.erb:36:in `[]'
+app/views/songs/_form.html.erb:36
+app/views/songs/_form.html.erb:1
+app/views/songs/new.html.erb:3
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:32:52 +0200
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 24.8ms | Allocations: 3973)
+  Rendered songs/new.html.erb within layouts/application (Duration: 27.5ms | Allocations: 4443)
+Completed 200 OK in 2201ms (Views: 2172.2ms | ActiveRecord: 1.9ms | Allocations: 1356799)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:33:07 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"qcjkPnDLjrl9upsV1TEVwcVcCbc0p9L95sPAO/9HlUIpoqfUCqM4dsDgyjz5OQwqRrdialLjRxdhmZ7KdFBYQQ==", "song"=>{"title"=>"sds", "author"=>"sa", "time"=>"1.23", "public"=>"yes"}, "commit"=>"Create Song"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:28:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO `songs` (`title`, `author`, `time`, `user_id`, `created_at`, `updated_at`, `public`) VALUES ('sds', 'sa', 1.23, 1, '2019-06-12 19:33:07.783650', '2019-06-12 19:33:07.783650', 0)[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/songs/3
+Completed 302 Found in 82ms (ActiveRecord: 16.5ms | Allocations: 13455)
+
+
+Started GET "/songs/3" for 127.0.0.1 at 2019-06-12 21:33:07 +0200
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE `songs`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:68:in `set_song'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 336)
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 0.6ms | Allocations: 7866)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:33:09 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1385)
+Completed 200 OK in 43ms (Views: 36.5ms | ActiveRecord: 1.2ms | Allocations: 9181)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:34:41 +0200
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 56.5ms | Allocations: 8225)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 5.3ms | Allocations: 18494)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass
+Did you mean?  super):
+    21:         <td><%= song.time %></td>
+    22:         <td><%= song.user_id %></td>
+    23:         <td><%= link_to 'Show', song %></td>
+    24:         <% if @song.user == current_user %>
+    25:         <td><%= link_to 'Edit', edit_song_path(song) %></td>
+    26:         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    27:         <% end %>
+  
+app/views/songs/index.html.erb:24
+app/views/songs/index.html.erb:17
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` ORDER BY `songs`.`id` DESC LIMIT 1[0m
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` ORDER BY `songs`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` ORDER BY `songs`.`id` ASC LIMIT 1[0m
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` ORDER BY `songs`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:35:59 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 55.3ms | Allocations: 2847)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 5.4ms | Allocations: 4408)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass
+Did you mean?  super):
+    21:         <td><%= song.time %></td>
+    22:         <td><%= song.user_id %></td>
+    23:         <td><%= link_to 'Show', song %></td>
+    24:         <% if @song.user == current_user %>
+    25:         <td><%= link_to 'Edit', edit_song_path(song) %></td>
+    26:         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    27:         <% end %>
+  
+app/views/songs/index.html.erb:24
+app/views/songs/index.html.erb:17
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:36:03 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (Duration: 41.8ms | Allocations: 2844)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 2.3ms | Allocations: 4351)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass
+Did you mean?  super):
+    21:         <td><%= song.time %></td>
+    22:         <td><%= song.user_id %></td>
+    23:         <td><%= link_to 'Show', song %></td>
+    24:         <% if @song.user == current_user %>
+    25:         <td><%= link_to 'Edit', edit_song_path(song) %></td>
+    26:         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    27:         <% end %>
+  
+app/views/songs/index.html.erb:24
+app/views/songs/index.html.erb:17
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:36:24 +0200
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:24
+  Rendered songs/index.html.erb within layouts/application (Duration: 75.3ms | Allocations: 9889)
+Completed 200 OK in 2344ms (Views: 2296.7ms | ActiveRecord: 6.4ms | Allocations: 1363980)
+
+
+Started GET "/songs/1" for 127.0.0.1 at 2019-06-12 21:36:48 +0200
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE `songs`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:68:in `set_song'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 334)
+Completed 200 OK in 56ms (Views: 45.3ms | ActiveRecord: 1.0ms | Allocations: 7889)
+
+
+Started GET "/songs/1" for 127.0.0.1 at 2019-06-12 21:36:56 +0200
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (4.3ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE `songs`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:68:in `set_song'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 99)
+Completed 200 OK in 64ms (Views: 54.0ms | ActiveRecord: 4.3ms | Allocations: 7322)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:37:00 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:24
+  Rendered songs/index.html.erb within layouts/application (Duration: 33.7ms | Allocations: 2649)
+Completed 200 OK in 116ms (Views: 104.5ms | ActiveRecord: 3.2ms | Allocations: 10306)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:39:53 +0200
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:24
+  Rendered songs/index.html.erb within layouts/application (Duration: 71.7ms | Allocations: 9889)
+Completed 500 Internal Server Error in 2157ms (ActiveRecord: 5.6ms | Allocations: 1367445)
+
+
+  
+ActionView::Template::Error (undefined method `sign_in?' for #<User:0x00005623f270ade8>):
+    12:   <body>
+    13:   <p class="notice"><%= notice %></p>
+    14:   <p class="alert"><%= alert %></p>
+    15:   <% if current_user.sign_in? %>
+    16:   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    17:     <% end %>
+    18:     <%= yield %>
+  
+app/views/layouts/application.html.erb:15
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:41:32 +0200
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 1 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:24
+  Rendered songs/index.html.erb within layouts/application (Duration: 65.8ms | Allocations: 9889)
+Completed 200 OK in 2374ms (Views: 2313.2ms | ActiveRecord: 6.4ms | Allocations: 1364076)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-06-12 21:41:37 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mxU/cns/JYKLBWmyVpnN58Ohaffymy4B31oZ8C3u2nUbf3yYAVeTTTZfOJt6kdQMQEoCKpTfu+tYAEcBpvkXdg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms (ActiveRecord: 0.7ms | Allocations: 5326)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-12 21:41:37 +0200
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-06-12 21:41:37 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 37.9ms | Allocations: 640)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 59.8ms | Allocations: 2833)
+Completed 200 OK in 100ms (Views: 93.8ms | ActiveRecord: 0.0ms | Allocations: 10932)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-06-12 21:41:42 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 215)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 123)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1865)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 9276)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-06-12 21:41:57 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"kt/tHrBKMt2RLaUtsHREvBgevkc5UzoGREhXGsREmxuz9E+8Wb1lVMGQoS1Nv+PCV2UBlDTUS5RzVHOvujg3xg==", "user"=>{"email"=>"drugi@wp.pl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :email attribute in User model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from block in build_relation at /home/greengo/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-6.0.0.rc1/lib/active_record/validations/uniqueness.rb:64)
+  [1m[36mUser Exists? (7.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'drugi@wp.pl' LIMIT 1[0m
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('drugi@wp.pl', '$2a$11$NtihdBCtxb7RLQ8PgvlDzeGfXiL50uXsrxXOadA2iQGc.J41RdDJG', '2019-06-12 19:41:58.178036', '2019-06-12 19:41:58.178036')[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 422ms (ActiveRecord: 23.4ms | Allocations: 15397)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-12 21:41:58 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 204)
+Completed 200 OK in 36ms (Views: 23.3ms | ActiveRecord: 0.5ms | Allocations: 9696)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:42:01 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 2 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  Rendered songs/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1706)
+Completed 200 OK in 45ms (Views: 29.2ms | ActiveRecord: 1.8ms | Allocations: 9392)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:42:25 +0200
+  [1m[35m (1.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 2 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  Rendered songs/index.html.erb within layouts/application (Duration: 67.5ms | Allocations: 8949)
+Completed 200 OK in 2252ms (Views: 2207.0ms | ActiveRecord: 7.1ms | Allocations: 1363130)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-06-12 21:42:29 +0200
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (Duration: 9.5ms | Allocations: 3884)
+  Rendered songs/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 4243)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.7ms | Allocations: 12061)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-06-12 21:42:38 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"yybYf9Hlt56wagIWJtSV43Zn9csr69lWpXj5+9vavtuFIEctUV7daF1MpeRE+3bvE+UOyQssyI+/jTTGyb7ISA==", "song"=>{"title"=>"hjiuh", "author"=>"jioio", "time"=>"32", "public"=>"yes"}, "commit"=>"Create Song"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[36mSong Create (1.2ms)[0m  [1m[32mINSERT INTO `songs` (`title`, `author`, `time`, `user_id`, `created_at`, `updated_at`, `public`) VALUES ('hjiuh', 'jioio', 32.0, 2, '2019-06-12 19:42:38.673242', '2019-06-12 19:42:38.673242', 0)[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/songs/4
+Completed 302 Found in 57ms (ActiveRecord: 18.4ms | Allocations: 5540)
+
+
+Started GET "/songs/4" for 127.0.0.1 at 2019-06-12 21:42:38 +0200
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSong Load (6.9ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE `songs`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:68:in `set_song'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 329)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 82ms (Views: 68.4ms | ActiveRecord: 7.5ms | Allocations: 8870)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-06-12 21:42:42 +0200
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/songs_controller.rb:7:in `index'
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.8ms)[0m  [1m[34mSELECT `songs`.* FROM `songs` WHERE (`songs`.`user_id` = 2 OR `songs`.`public` = 0)[0m
+  ↳ app/views/songs/index.html.erb:17
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/songs/index.html.erb:24
+  Rendered songs/index.html.erb within layouts/application (Duration: 37.0ms | Allocations: 2630)
+Completed 200 OK in 70ms (Views: 60.6ms | ActiveRecord: 5.9ms | Allocations: 10297)
+
+
