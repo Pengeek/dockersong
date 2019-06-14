@@ -1,24 +1,43 @@
 <p id="notice"><%= notice %></p>
+<h1>Playing <%= @song.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @song.title %>
-</p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @song.author %>
-</p>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Time</th>
+    <th>User</th>
+    <th>Play</th>
+<!--    <th> Edit </th>-->
+<!--    <th> Destroy</th>-->
+  </tr>
+  </thead>
 
-<p>
-  <strong>Time:</strong>
-  <%= @song.time %>
-</p>
+  <tbody>
+  <tr>
+    <td><%= @song.title %></td>
+    <td><%= @song.author %></td>
+    <td><%= @song.time %></td>
+    <td><%= @song.user_id %></td>
+    <td><div class="spinner-border" role="status">
+      <span class="sr-only"></span>
+    </div></td>
+  </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>User:</strong>
-  <%= @song.user_id %>
-</p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<div class="card text-center">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Song Text</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional contentWith supporting text below as a natural lead-in to additional content.</p>
+  </div>
+</div>
+
+
+<!--<%#= link_to 'Edit', edit_song_path(@song) %> |-->
+<%#= link_to 'Back', songs_path %>

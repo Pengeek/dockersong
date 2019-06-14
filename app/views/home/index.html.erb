@@ -1,35 +1,31 @@
 
 
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to 'Songs', songs_path %>
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Handle</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Jacob</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Larry</td>
-    <td>the Bird</td>
-    <td>@twitter</td>
-  </tr>
-  </tbody>
-</table>
+<h1>CDV Song Docker App</h1>
+<h2>Hello <%= current_user.email %></h2>
+
+<!--<button type="button" class="btn btn-primary"><%#= link_to 'Songs', songs_path, class: "text-dark btn" %></button>-->
+<%#= button_to "delete", destroy_user_session_path, :method => "delete" %>
+
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="https://applemobile.pl/wp-content/uploads/2018/04/Ikona1-6.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Best Music</h5>
+      <p class="card-text">Only Best music in WEB!</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="http://www.fumcwl.org/files/69/Pictures/music.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Listen Everywhere</h5>
+      <p class="card-text">Your best music on every device whit internet connection</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="http://www.pngmart.com/files/3/Music-PNG-Photos.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Upload</h5>
+      <p class="card-text">Share music whit friends!</p>
+    </div>
+  </div>
+</div>

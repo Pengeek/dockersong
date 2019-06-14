@@ -17,3 +17,5 @@
 // // const imagePath = (name) => images(name, true)
 import 'bootstrap'
 import './src/application.scss'
+//= require rails-ujs
+//= require jquery
