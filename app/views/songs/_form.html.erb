@@ -1,3 +1,4 @@
+<center>
 <%= form_with(model: song, local: true) do |form| %>
   <% if song.errors.any? %>
     <div id="error_explanation">
@@ -36,7 +37,13 @@
     <%= form.select :public, options_for_select(Song.publics.keys) %>
   </div>
 
+  <%= form.label :text %>
+  <div class="field">
+    <%= form.text_area :text %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</center>
